@@ -1,40 +1,35 @@
 import React from "react";
-import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Nav from "./Nav"
+import styled from "styled-components";
+import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <div>
-      <MainHeder>
-        <NavLink to="/">
-          <Logo
-            src="https://cdn.iconscout.com/icon/free/png-512/free-amazon-logo-icon-download-in-svg-png-gif-file-formats--brand-social-media-card-pack-logos-icons-1583154.png?f=webp&w=256"
-            alt="Logo of the website"
-          />
-        </NavLink>
-        <Nav/>
-      </MainHeder>
-    </div>
+    <MainHeader>
+      <NavLink to="/">
+        <img
+          src="https://purepng.com/public/uploads/large/amazon-logo-s3f.png"
+          alt="my logo img"
+          className="logo"
+        />
+      </NavLink>
+      <Nav />
+    </MainHeader>
   );
 };
 
-const MainHeder = styled.header`
+const MainHeader = styled.header`
+  padding: 0 4.8rem;
   height: 10rem;
   background-color: ${({ theme }) => theme.colors.bg};
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+
   .logo {
-    height: 5rem;
+    height: 20rem;
+    width: 20rem;
   }
 `;
-
-const Logo = styled.img`
-  width: 100px;
-  height: 100px;
-  margin-left: 2rem;
-`;
-
 export default Header;
